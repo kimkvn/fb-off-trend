@@ -5,8 +5,9 @@
   "content_scripts": [
     {
       "matches":[
-        "https://www.facebook.com/",
-        "https://www.facebook.com/*"
+        "http://www.facebook.com/",
+        "https://www.facebook.com/*",
+        "https://www.facebook.com/?ref=logo"
       ],
       "js": [
         "jquery.min.js",
