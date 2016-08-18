@@ -23,6 +23,10 @@ $.get(chrome.extension.getURL('/placeholder.html'), function(data) {
   panda.style.width = "290px";
   panda.style.padding = "15px 0 0 0";
 
+  if ($('#pagelet_reminders').length > 0){
+    console.log('success')
+  }
+
   var number = Math.floor(Math.random() * 5);
 
   panda.src = photoSet[number];
