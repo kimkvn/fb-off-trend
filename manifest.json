@@ -2,13 +2,18 @@
   "manifest_version": 2,
   "name": "FB Off Trend",
   "version": "0.1",
+  "web_accessible_resources":[
+    "placeholder.html"
+  ],
   "content_scripts": [
     {
       "matches":[
         "https://www.facebook.com/",
         "https://www.facebook.com/*"
       ],
-      "js": ["content.js"]
+      "js": [
+        "jquery.min.js",
+        "content.js"]
     }
   ]
 }
