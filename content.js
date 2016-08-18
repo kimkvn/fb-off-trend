@@ -1,14 +1,4 @@
 
-
-
-function hideTrending(){
-  var box = document.getElementById('pagelet_trending_tags_and_topics');
-  console.log('success')
-  box.style.display = "none";
-};
-
-hideTrending();
-
 var photo1 = chrome.extension.getURL('images/redPanda_1.jpg');
 var photo2 = chrome.extension.getURL('images/redPanda_2.jpg');
 var photo3 = chrome.extension.getURL('images/redPanda_3.jpg');
@@ -23,6 +13,15 @@ var photoSet = [
   photo5
 ];
 
+var number = Math.floor(Math.random() * 5);
+
+function hideTrending(){
+  var box = document.getElementById('pagelet_trending_tags_and_topics');
+  box.style.display = "none";
+};
+
+hideTrending();
+
 $.get(chrome.extension.getURL('/placeholder.html'), function(data) {
   $(data).appendTo('.home_right_column');
 
@@ -30,19 +29,12 @@ $.get(chrome.extension.getURL('/placeholder.html'), function(data) {
   panda.style.width = "290px";
   panda.style.padding = "15px 0 0 0";
 
-  // if ($('#pagelet_reminders').length > 0){
-  //   console.log('success')
-  // }
-
-  var number = Math.floor(Math.random() * 5);
-
   panda.src = photoSet[number];
 
 });
 
+
 $('head').bind('DOMSubtreeModified', function(){
   hideTrending();
+  console.log('hooray')
 });
-
-
-console.log('OK')
