@@ -3,7 +3,8 @@
   "name": "FB Off Trend",
   "version": "0.1",
   "web_accessible_resources":[
-    "placeholder.html"
+    "placeholder.html",
+    "redPanda_1.jpg"
   ],
   "content_scripts": [
     {
