@@ -22,35 +22,26 @@ function hideTrending(){
 
 hideTrending();
 
-$.get(chrome.extension.getURL('/placeholder.html'), function(data) {
-  $(data).appendTo('.home_right_column');
-
-  var panda = document.getElementById('panda');
-  panda.style.width = "290px";
-  panda.style.padding = "15px 0 0 0";
-
-  panda.src = photoSet[number];
-
-});
-
-
-$('head').bind('DOMSubtreeModified', function(){
-  hideTrending();
-
-
+function appendPanda(){
   $.get(chrome.extension.getURL('/placeholder.html'), function(data) {
     $(data).appendTo('.home_right_column');
 
-    var panda = document.getElementById('panda');
-    panda.style.width = "290px";
+
+    panda.style.width = "280px";
     panda.style.padding = "15px 0 0 0";
 
     panda.src = photoSet[number];
 
   });
+};
 
-});
+appendPanda();
 
-$(window).bind('beforeunload', function(){
-  console.log('refreshing!')
+var count = 0;
+
+$('head').bind('DOMSubtreeModified', function(){
+  if($('#pandaWrap').length < 1){
+    hideTrending();
+    appendPanda();
+  }
 });

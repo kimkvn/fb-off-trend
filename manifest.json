@@ -6,8 +6,7 @@
     {
       "matches":[
         "http://www.facebook.com/",
-        "https://www.facebook.com/*",
-        "https://www.facebook.com/?ref=logo"
+        "https://www.facebook.com/*"
       ],
       "js": [
         "jquery.min.js",
