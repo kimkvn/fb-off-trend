@@ -36,5 +36,21 @@ $.get(chrome.extension.getURL('/placeholder.html'), function(data) {
 
 $('head').bind('DOMSubtreeModified', function(){
   hideTrending();
-  console.log('hooray')
+
+
+  $.get(chrome.extension.getURL('/placeholder.html'), function(data) {
+    $(data).appendTo('.home_right_column');
+
+    var panda = document.getElementById('panda');
+    panda.style.width = "290px";
+    panda.style.padding = "15px 0 0 0";
+
+    panda.src = photoSet[number];
+
+  });
+
+});
+
+$(window).bind('beforeunload', function(){
+  console.log('refreshing!')
 });
