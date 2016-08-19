@@ -24,20 +24,26 @@ function hideExtras(){
 
 hideExtras();
 
-function appendPanda(){
-  $.get(chrome.extension.getURL('/placeholder.html'), function(data) {
-    $(data).appendTo('.home_right_column');
-    panda.style.width = "280px";
-    panda.style.padding = "15px 0 0 0";
-    panda.src = photoSet[number];
-  });
-};
+// function appendPanda(){
+//   $.get(chrome.extension.getURL('/placeholder.html'), function(data) {
+//     $(data).appendTo('.home_right_column');
+//     panda.style.width = "280px";
+//     panda.style.padding = "15px 0 0 0";
+//     panda.src = photoSet[number];
+//   });
+// };
+// appendPanda();
 
-appendPanda();
+
+$('<div id="pandaWrap"><img id="panda" ></div>').appendTo('.home_right_column');
+$('#panda').css('width', "280px");
+$('#panda').css('padding-top', "15px");
+$('#panda').attr('src', photoSet[number]);
+
 
 $('head').bind('DOMSubtreeModified', function(){
   if($('#pandaWrap').length < 1){
     hideExtras();
-    appendPanda();
+    //appendPanda();
   }
 });
