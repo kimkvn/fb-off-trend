@@ -15,33 +15,29 @@ var photoSet = [
 
 var number = Math.floor(Math.random() * 5);
 
-function hideTrending(){
-  var box = document.getElementById('pagelet_trending_tags_and_topics');
-  box.style.display = "none";
+function hideExtras(){
+  var trending = document.getElementById('pagelet_trending_tags_and_topics');
+  var suggestions = document.getElementById('pagelet_ego_pane');
+  trending.style.display = "none";
+  suggestions.style.display = "none";
 };
 
-hideTrending();
+hideExtras();
 
 function appendPanda(){
   $.get(chrome.extension.getURL('/placeholder.html'), function(data) {
     $(data).appendTo('.home_right_column');
-
-
     panda.style.width = "280px";
     panda.style.padding = "15px 0 0 0";
-
     panda.src = photoSet[number];
-
   });
 };
 
 appendPanda();
 
-var count = 0;
-
 $('head').bind('DOMSubtreeModified', function(){
   if($('#pandaWrap').length < 1){
-    hideTrending();
+    hideExtras();
     appendPanda();
   }
 });
