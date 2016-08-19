@@ -34,16 +34,16 @@ hideExtras();
 // };
 // appendPanda();
 
-
-$('<div id="pandaWrap"><img id="panda" ></div>').appendTo('.home_right_column');
-$('#panda').css('width', "280px");
-$('#panda').css('padding-top', "15px");
-$('#panda').attr('src', photoSet[number]);
-
+function appendPanda(){
+  $('<div id="pandaWrap"><img id="panda" ></div>').appendTo('.home_right_column');
+  $('#panda').css('width', "280px");
+  $('#panda').css('padding-top', "15px");
+  $('#panda').attr('src', photoSet[number]);
+};
 
 $('head').bind('DOMSubtreeModified', function(){
   if($('#pandaWrap').length < 1){
     hideExtras();
-    //appendPanda();
+    appendPanda();
   }
 });
