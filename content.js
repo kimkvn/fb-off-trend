@@ -32,6 +32,7 @@ hideExtras();
 //--inserting a panda photo
 //
 function appendPanda(){
+
   // $('<div id="pandaWrap"><img id="panda" ></div>').appendTo('.home_right_column');
   // $('#panda').css('width', "280px");
   // $('#panda').css('padding-top', "15px");
@@ -60,6 +61,13 @@ appendPanda();
 //
 $('head').bind('DOMSubtreeModified', function(){
   if($('#pandaWrap').length < 1){
+    hideExtras();
+    appendPanda();
+  }
+});
+
+document.head.addEventListener('DOMSubtreeModified', function(){
+  if(document.getElementById('pandaWrap').length < 1){
     hideExtras();
     appendPanda();
   }
