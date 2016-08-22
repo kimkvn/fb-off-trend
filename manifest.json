@@ -2,6 +2,7 @@
   "manifest_version": 2,
   "name": "FB Off Trend",
   "version": "0.1",
+  "permissions": ["default_popup"],
   "content_scripts": [
     {
       "matches":[
