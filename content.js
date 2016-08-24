@@ -51,3 +51,5 @@ document.head.addEventListener('DOMSubtreeModified', function(){
     appendPanda();
   }
 });
+
+console.log(localStorage)

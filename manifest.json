@@ -23,7 +23,8 @@
     }
   ],
   "background":{
-    "scripts": ["background.js"]
+    "scripts": ["background.js"],
+    "persistent": true
   },
   "web_accessible_resources":[
     "placeholder.html",

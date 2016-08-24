@@ -1,12 +1,12 @@
 body{
   max-width: 400px;
 }
-
 button{
-  width: 170px;
+  width: 210px;
   height: 40px;
   border: none;
   border-radius: 5px;
+  font-size: 14px;
 }
 button:hover{
   cursor: pointer;
@@ -15,5 +15,12 @@ button:hover{
   background: #F71735;
 }
 #onPanda{
+  background: #009A31;
+}
+
+.offPanda{
+  background: #F71735;
+}
+.onPanda{
   background: #009A31;
 }
