@@ -62,12 +62,20 @@ document.head.addEventListener('DOMSubtreeModified', function(){
 
 chrome.runtime.onMessage.addListener(
   function( request, sendResponse){
-    if(request.status == false){
-      console.log("extras are visible")
-      showExtras();
+    if(request.status == 1){
+      console.log('yes')
+      console.log(request.status)
     }
-    else if (request.status == true){
-      console.log("extras are hidden")
-      hideExtras();
+    if(request.status == 0){
+      console.log('no')
+      console.log(request.status)
     }
+    // if(request.status == false){
+    //   console.log("extras are visible")
+    //   showExtras();
+    // }
+    // else if (request.status == true){
+    //   console.log("extras are hidden")
+    //   hideExtras();
+    // }
 });

@@ -6,11 +6,11 @@ $(function(){
 
     if($('#pandaBtn').hasClass('onPanda')){
       $('#pandaBtn').html("Bring back the Red Pandas!");
-      localStorage["status"] = false;
+      localStorage["status"] = 0;
 
     }else{
       $('#pandaBtn').html("I'm tired of Red Pandas.");
-      localStorage["status"] = true;
+      localStorage["status"] = 1;
     }
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
         chrome.tabs.sendMessage(tabs[0].id, {status: localStorage.status})
