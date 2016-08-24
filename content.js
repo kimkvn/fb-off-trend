@@ -57,12 +57,14 @@ document.head.addEventListener('DOMSubtreeModified', function(){
 // });
 
 chrome.runtime.onMessage.addListener(
-  function( sender, sendResponse){
+  function( request, sendResponse){
     // console.log(sender.tab ?
     //   "from a content script:" + sender.tab.url :
     //   "from the extension");
     //   if(request.greeting == "hello"){
     //     sendResponse({farewell: "goodbye"});
     //   }
-    console.log(localStorage);
+    console.log(
+      request.status
+    );
 });
