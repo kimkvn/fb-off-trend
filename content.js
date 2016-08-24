@@ -63,10 +63,14 @@ document.head.addEventListener('DOMSubtreeModified', function(){
 chrome.runtime.onMessage.addListener(
   function( request, sendResponse){
     if(request.status == 1){
+      hideExtras();
+      document.getElementById('panda').style.display = "block";
       console.log('yes')
       console.log(request.status)
     }
     if(request.status == 0){
+      showExtras();
+      document.getElementById('panda').style.display = "none";
       console.log('no')
       console.log(request.status)
     }
