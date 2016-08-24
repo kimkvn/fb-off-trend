@@ -55,30 +55,19 @@ chrome.runtime.onMessage.addListener(
       hideExtras();
       showPanda();
       pandaStatus = 1;
-      console.log(pandaStatus)
     }
     if(request.status == 0){
       showExtras();
       hidePanda();
       pandaStatus = 0;
-      console.log(pandaStatus)
     }
 });
 
-
-
 //--watches for partial DOM changes
 document.head.addEventListener('DOMSubtreeModified', function(){
-  if(document.getElementsByClassName('pandaWrap').length < 1){
-    hideExtras();
-    appendPanda();
-    // if (pandaStatus === 1){
-    //   hideExtras();
-    //   showPanda();
-    // }else{
-    //   showExtras();
-    //   hidePanda();
-    // }
-
-  }
+  if ((pandaStatus === 1) &&
+    (document.getElementsByClassName('pandaWrap').length < 1)){
+      hideExtras();
+      appendPanda();
+    }
 });
