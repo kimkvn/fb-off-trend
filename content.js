@@ -1,10 +1,14 @@
 
 function hideExtras(){
-  document.getElementById('pagelet_trending_tags_and_topics').style.display = "none";;
-  document.getElementById('pagelet_ego_pane').style.display = "none";;
+  document.getElementById('pagelet_trending_tags_and_topics').style.display = "none";
+  document.getElementById('pagelet_ego_pane').style.display = "none";
 };
 hideExtras();
 
+function showExtras(){
+  document.getElementById('pagelet_trending_tags_and_topics').style.display = "block";
+  document.getElementById('pagelet_ego_pane').style.display = "block";
+}
 
 //
 //--getting ready to read the images
@@ -58,13 +62,12 @@ document.head.addEventListener('DOMSubtreeModified', function(){
 
 chrome.runtime.onMessage.addListener(
   function( request, sendResponse){
-    // console.log(sender.tab ?
-    //   "from a content script:" + sender.tab.url :
-    //   "from the extension");
-    //   if(request.greeting == "hello"){
-    //     sendResponse({farewell: "goodbye"});
-    //   }
-    console.log(
-      request.status
-    );
+    if(request.status == false){
+      console.log("extras are visible")
+      showExtras();
+    }
+    else if (request.status == true){
+      console.log("extras are hidden")
+      hideExtras();
+    }
 });
