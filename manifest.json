@@ -2,7 +2,13 @@
   "manifest_version": 2,
   "name": "FB Off Trend",
   "version": "0.1",
-  "permissions": ["default_popup"],
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+  "browser_action":{
+    "default_icon": "icon.png"
+  },
   "content_scripts": [
     {
       "matches":[
@@ -15,8 +21,12 @@
       ]
     }
   ],
+  "background":{
+    "scripts": ["background.js"]
+  },
   "web_accessible_resources":[
     "placeholder.html",
     "images/*"
   ]
+
 }

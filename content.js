@@ -51,8 +51,3 @@ document.head.addEventListener('DOMSubtreeModified', function(){
     appendPanda();
   }
 });
-
-// chrome.pageAction.onClicked.addListener(function(tab){
-//   //chrome.pageAction.show(tab.id);
-//   alert('hello')
-// });
