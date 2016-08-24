@@ -1,0 +1,19 @@
+body{
+  max-width: 400px;
+}
+
+button{
+  width: 170px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+}
+button:hover{
+  cursor: pointer;
+}
+#offPanda{
+  background: #F71735;
+}
+#onPanda{
+  background: #009A31;
+}
