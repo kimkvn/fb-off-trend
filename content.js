@@ -65,8 +65,8 @@ chrome.runtime.onMessage.addListener(
 
 //--watches for partial DOM changes
 document.head.addEventListener('DOMSubtreeModified', function(){
-  if ((pandaStatus === 1) &&
-    (document.getElementsByClassName('pandaWrap').length < 1)){
+  if 
+    (document.getElementsByClassName('pandaWrap').length < 1){
       hideExtras();
       appendPanda();
     }

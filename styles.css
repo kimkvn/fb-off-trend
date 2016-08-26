@@ -11,12 +11,6 @@ button{
 button:hover{
   cursor: pointer;
 }
-#offPanda{
-  background: #F71735;
-}
-#onPanda{
-  background: #009A31;
-}
 
 .offPanda{
   background: #F71735;
