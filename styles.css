@@ -11,7 +11,17 @@ button{
 button:hover{
   cursor: pointer;
 }
-
+body{
+  width: 210px;
+  height: 40px;
+}
+a, a:focus, a:visited, a:active{
+  text-decoration: none;
+  outline: 0;
+}
+a:hover{
+  text-decoration: underline;
+}
 .offPanda{
   background: #F71735;
 }
