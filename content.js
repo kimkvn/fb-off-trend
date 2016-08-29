@@ -5,11 +5,6 @@ function hideExtras(){
 };
 hideExtras();
 
-function showExtras(){
-  document.getElementById('pagelet_trending_tags_and_topics').style.display = "block";
-  document.getElementById('pagelet_ego_pane').style.display = "block";
-}
-
 //--getting ready to read the images
 var photoSet = [];
 
@@ -40,32 +35,9 @@ function appendPanda(){
 };
 appendPanda();
 
-function showPanda(){
-  document.getElementById('panda').style.display = "block";
-};
-function hidePanda(){
-  document.getElementById('panda').style.display = "none";
-};
-
-var pandaStatus;
-
-chrome.runtime.onMessage.addListener(
-  function( request, sendResponse){
-    if(request.status == 1){
-      hideExtras();
-      showPanda();
-      pandaStatus = 1;
-    }
-    if(request.status == 0){
-      showExtras();
-      hidePanda();
-      pandaStatus = 0;
-    }
-});
-
 //--watches for partial DOM changes
 document.head.addEventListener('DOMSubtreeModified', function(){
-  if 
+  if
     (document.getElementsByClassName('pandaWrap').length < 1){
       hideExtras();
       appendPanda();
